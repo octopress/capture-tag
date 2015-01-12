@@ -1,7 +1,7 @@
 module Octopress
   module Tags
-    module CaptureTag
-      VERSION = "1.0.0"
+    module Capture
+      VERSION = "1.0.1"
     end
   end
 end

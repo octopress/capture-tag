@@ -3,6 +3,7 @@
 A more powerful capture liquid tag. Features:
 
 - Conditional capture
+- Filters
 - Support additive assignment with `+=` operator
 
 [![Build Status](https://travis-ci.org/octopress/capture-tag.svg)](https://travis-ci.org/octopress/capture-tag)
@@ -11,62 +12,73 @@ A more powerful capture liquid tag. Features:
 
 ## Installation
 
-Add this line to your application's Gemfile:
+If you're using bundler add this gem to your site's Gemfile in the `:jekyll_plugins` group:
 
-    gem 'octopress-capture-tag'
+    group :jekyll_plugins do
+      gem 'octopress-capture-tag'
+    end
 
-And then execute:
+Then install the gem with Bundler
 
     $ bundle
 
-Or install it yourself as:
+To install manually without bundler:
 
     $ gem install octopress-capture-tag
 
-Next add it to your gems list in Jekyll's `_config.yml`
+Then add the gem to your Jekyll configuration.
 
     gems:
-      - octopress-capture-tag
+      -octopress-capture-tag
 
 ## Usage
 
 Use the capture tag like normal.
 
-    {% capture var1 %}
-    awesome
-    {% endcapture %}
+```
+{% capture var1 %}
+awesome
+{% endcapture %}
 
-    {{ var1 }}           //=> awesome
+{{ var1 }}           //=> awesome
+```
 
 Filter captured content.
 
-    {% capture var1 | upcase %}
-    awesome
-    {% endcapture %}
+```
+{% capture var1 | upcase %}
+awesome
+{% endcapture %}
 
-    {{ var1 }}           //=> AWESOME
+{{ var1 }}           //=> AWESOME
+```
 
 Append to variables with capture.
     
-    // Assuming var1 == 'awesome'
-    {% capture var1 += %}
-    sauce
-    {% endcapture %}
+```
+{% assign var1 = 'awesome' }}
 
-    {{ var1 }}        //=> awesome sauce
+{% capture var1 += %}
+sauce
+{% endcapture %}
+
+{{ var1 }}        //=> awesome sauce
+```
 
 Note: the `+=` operator will act as a normal capture if the
 capture variable is `nil`.
 
 Conditionally capture.
 
-    {% capture greeting if true %}
-    Hi Guys
-    {% endcapture %}
+``
+{% capture greeting if true %}
+Hi Guys
+{% endcapture %}
 
-    {% capture greeting unless false %}
-    Hi Guys
-    {% endcapture %}
+{% capture greeting unless false %}
+Hi Guys
+{% endcapture %}
+``
 
 ## Contributing
 

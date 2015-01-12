@@ -5,7 +5,7 @@ require 'octopress-capture-tag/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "octopress-capture-tag"
-  spec.version       = Octopress::Tags::CaptureTag::VERSION
+  spec.version       = Octopress::Tags::Capture::VERSION
   spec.authors       = ["Brandon Mathis"]
   spec.email         = ["brandon@imathis.com"]
   spec.summary       = %q{A powerful replacement for the Liquid capture tag}

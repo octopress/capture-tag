@@ -4,7 +4,7 @@ require "jekyll"
 
 module Octopress
   module Tags
-    module CaptureTag
+    module Capture
       class Tag < Liquid::Block
         SYNTAX = /([[:word:]]+)\s*(\+=|\|\|=)?/o
 
@@ -40,4 +40,15 @@ module Octopress
   end
 end
 
-Liquid::Template.register_tag('capture', Octopress::Tags::CaptureTag::Tag)
+Liquid::Template.register_tag('capture', Octopress::Tags::Capture::Tag)
+
+if defined? Octopress::Docs
+  Octopress::Docs.add({
+    name:        "Octopress Capture Tag",
+    gem:         "octopress-capture-tag",
+    version:     Octopress::Tags::Capture::VERSION,
+    description: "An improved Liqud capture tag supporting filters, concatenation, conditionals, and more",
+    path:        File.expand_path(File.join(File.dirname(__FILE__), "../")),
+    source_url:  "https://github.com/octopress/capture-tag"
+  })
+end
