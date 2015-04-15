@@ -1,5 +1,5 @@
 ---
-layout: nil
+var: true
 ---
 {% assign some_bool = false %}
 ## Simple capture
@@ -16,8 +16,8 @@ hi → {% capture varz ||= %}hi{% endcapture %}{{ varz }}
 hihi → {% capture var3 += if true %}hi{% endcapture %}{{ var3 }}
 
 ## Complex capture
-hi → {% capture var8 if false or page.layout %}hi{% endcapture %}{{ var8 }}
-um, hi → {% capture var9 if false or page.layout %}
+hi → {% capture var8 if false or page.var %}hi{% endcapture %}{{ var8 }}
+um, hi → {% capture var9 if false or page.var %}
         {% assign var10 = 'hi' %}
         um, {{ var10 }}
         {% endcapture %}{{ var9 }}
