@@ -9,7 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Brandon Mathis"]
   spec.email         = ["brandon@imathis.com"]
   spec.summary       = %q{A powerful replacement for the Liquid capture tag}
-  spec.description   = %q{A powerful replacement for the Liquid capture tag}
   spec.homepage      = "https://github.com/octopress/capture-tag"
   spec.license       = "MIT"
 
@@ -19,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "octopress-tag-helpers", "~> 1.0"
-  spec.add_runtime_dependency "jekyll", "~> 2.0"
+  spec.add_runtime_dependency "jekyll", ">= 2.0"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
