@@ -9,5 +9,5 @@ exclude:
 
 # Build settings
 markdown: kramdown
-gems:
+plugins:
   - octopress-capture-tag
